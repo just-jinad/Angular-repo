@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Todo Here</title>
+</head>
+<body>
+    <div class="container">
+      <div class="text-center fst-italic">Add Your Todo Here</div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label fw-bold-">Add Task</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="addtask"
+              placeholder="Add Task Here"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label fw-bold">Add Category</label>
+            <input
+              [(ngModel)]="category"
+              class="form-control"
+              type="text"
+              placeholder="Add category"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label fw-bold">Add Time</label>
+            <input
+              [(ngModel)]="addtime"
+              class="form-control"
+              type="time"
+              placeholder="last name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label fw-bold">Add Day</label>
+            <input
+            type="date"
+              [(ngModel)]="addday"
+              class="form-control"
+              placeholder="last name"
+            />
+          </div>
+    
+       
+          <button type="submit" class="btn btn-primary" (click)="addTodo()">
+            Add Todo here
+          </button>
+        </div>
+        <br /><br />
+
+
+        <div class="container">
+          <table class="table table-striped table-danger">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Task</th>
+                <th>Time</th>
+                <th>Category</th>
+                <th>Day</th>
+                <th>Edit Todo</th>
+                <th>Delete Todo</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let ListofTodo of userTodo; let id = index">
+                <td>{{id +1}}</td>
+                <td>{{ListofTodo.Addtask}}</td>
+                <td>{{ListofTodo.Addtime}}</td>
+                <td>{{ListofTodo.Addcategory}}</td>
+                <td>{{ListofTodo.Addday}}</td>
+                <td><button class="btn btn-success">Edit</button></td>
+                <td><button class="btn btn-danger">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+ 
+</body>
+</html>

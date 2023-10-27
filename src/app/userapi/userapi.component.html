@@ -1,0 +1,18 @@
+<p>userapi works!</p>
+
+<div class="container">
+    <div class="row mx-auto">
+        <button (click)="generateApi()" class="bg-red-500 p-3 text-white rounded ">Generate API</button>
+        <div class="flex flex-wrap">
+            <div class="mx-auto shadow-lg rounded-lg px-3 py-5 mt-5" *ngFor="let apiConsumed of this.fetchedData">
+                <div class="text-center mt-5">
+
+                    <img class="h-[150px] mx-auto rounded-full" src={{apiConsumed.avatar_url}} alt="">
+    
+                    <p>{{apiConsumed.url}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
